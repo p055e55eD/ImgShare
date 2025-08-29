@@ -6,9 +6,9 @@ A Flask-based image sharing application with multiple difficulty levels.
 
 Choose your difficulty level and run:
 
-\`\`\`bash
+```bash
 LEVEL=1 docker-compose up --build   # or LEVEL=2 docker-compose up --build
-\`\`\`
+```
 
 ## Difficulty Levels
 
