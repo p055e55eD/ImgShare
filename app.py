@@ -41,21 +41,6 @@ def ensure_flag_file():
 
 ensure_flag_file()
 
-users_db = {
-    "admin": {
-        "password": "admin123",
-        "email": "admin@imgshare.com",
-        "joined": "2025-01-01"
-    },
-    "user": {
-        "password": "password",
-        "email": "user@imgshare.com", 
-        "joined": "2025-01-15"
-    }
-}
-
-photos_db = []
-
 def is_local(hostname):
     if not hostname:
         return False
@@ -151,6 +136,42 @@ def resize_image_from_url(url, target_width=300, target_height=200):
 
     encoded_content = base64.b64encode(content).decode()
     return f"data:image/png;base64,{encoded_content}"
+
+users_db = {
+    "admin": {
+        "password": "admin123",
+        "email": "admin@imgshare.com",
+        "joined": "2025-01-01"
+    },
+    "user": {
+        "password": "password",
+        "email": "user@imgshare.com", 
+        "joined": "2025-01-15"
+    }
+}
+
+photos_db = [
+    {
+        "id": 1,
+        "title": "Mountain Flags",
+        "description": "A beautiful view of Mount Everest.",
+        "url": "https://www.makalutravel.com/images/temp/banner.jpg",
+        "thumbnail": resize_image_from_url("https://www.makalutravel.com/images/temp/banner.jpg"),
+        "user": "admin",
+        "uploaded": datetime.now().strftime("%Y-%m-%d"),
+        "views": 0
+    },
+    {
+        "id": 2,
+        "title": "Kathmandu Scene",
+        "description": "A carved sculpture from Nepal with detailed traditional patterns.",
+        "url": "https://alittleadrift.com/wp-content/uploads/2010/10/kathmandu-nepal.jpg",
+        "thumbnail": resize_image_from_url("https://alittleadrift.com/wp-content/uploads/2010/10/kathmandu-nepal.jpg"),
+        "user": "admin",
+        "uploaded": datetime.now().strftime("%Y-%m-%d"),
+        "views": 0
+    }
+]
 
 @app.route("/redirect", methods=["GET"])
 def redirect_service():
