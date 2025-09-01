@@ -29,4 +29,3 @@ Find the flag! Each level has different vulnerabilities and attack vectors to ex
 
 Got ideas for Level 3 or improvements? Feel free to reach out with your suggestions!
 
-Good luck! 🚩
